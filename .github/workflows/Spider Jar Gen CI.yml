@@ -1,8 +1,6 @@
 name: Spider Jar Gen CI
 on:
-  push:
-  schedule:
-    - cron: '0 */12 * * *'
+
   workflow_dispatch:
 jobs:
   build:
@@ -32,7 +30,7 @@ jobs:
           #git push -f -u origin master
     
       - name: Build with Gradle
-        run: ./build.bat ec
+        run: buildAndGenJar.bat ec
       
       - name: Update spider jar
         uses: EndBug/add-and-commit@v9
